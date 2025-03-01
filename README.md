@@ -2,6 +2,10 @@
 
 A desktop IRC client with Discord-inspired UI. Connect to multiple IRC servers simultaneously with an interface familiar to Discord users.
 
+## Screenshot
+
+<img src="https://i.imgur.com/0knqfgk.png" style="width:600px;">
+
 ## Current Features
 
 - **Discord-like UI**: Server list sidebar, channel list, and user list panels
