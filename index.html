@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Dicsword IRC</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Server list (like Discord servers) -->
+    <div class="server-list">
+      <div class="add-server">
+        <button id="add-server-btn">+</button>
+      </div>
+      <div id="servers"></div>
+    </div>
+    
+    <!-- Channel list and chat area -->
+    <div class="main-content">
+      <!-- Channel list (like Discord channels) -->
+      <div class="channel-list">
+        <div class="server-header" id="current-server">
+          <h3>Select a server</h3>
+        </div>
+        <div id="channels"></div>
+      </div>
+      
+      <!-- Chat area -->
+      <div class="chat-area">
+        <div class="chat-header" id="current-channel">
+          <h3>Select a channel</h3>
+        </div>
+        <div id="messages"></div>
+        <div class="message-input">
+          <input type="text" id="message-box" placeholder="Send a message...">
+        </div>
+      </div>
+      
+      <!-- User list (like Discord members) -->
+      <div class="user-list">
+        <div class="user-list-header">
+          <h3>USERS</h3>
+        </div>
+        <div id="users"></div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Server connection modal -->
+  <div id="server-modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Add IRC Server</h2>
+      <form id="server-form">
+        <div class="form-group">
+          <label for="server-name">Server Display Name:</label>
+          <input type="text" id="server-name" required>
+        </div>
+        <div class="form-group">
+          <label for="server-address">Server Address:</label>
+          <input type="text" id="server-address" required>
+        </div>
+        <div class="form-group">
+          <label for="server-port">Port:</label>
+          <input type="number" id="server-port" value="6667" required>
+        </div>
+        <div class="form-group">
+          <label for="nickname">Nickname:</label>
+          <input type="text" id="nickname" required>
+        </div>
+        <div class="form-group">
+          <label for="server-password">Server Password (if required):</label>
+          <input type="password" id="server-password">
+        </div>
+        <div class="form-group checkbox">
+          <input type="checkbox" id="server-ssl" checked>
+          <label for="server-ssl">Use SSL</label>
+        </div>
+        <div class="form-group">
+          <button type="submit">Connect</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  
+  <!-- Channel selection modal -->
+  <div id="channel-modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Channel List</h2>
+      <input type="text" id="channel-search" placeholder="Search channels...">
+      <div id="channel-list"></div>
+    </div>
+  </div>
+  
+  <script src="renderer.js"></script>
+</body>
+</html>
